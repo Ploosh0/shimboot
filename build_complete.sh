@@ -109,12 +109,7 @@ if not board_name in all_builds["builds"]:
   print("Invalid board name: " + board_name, file=sys.stderr)
   sys.exit(1)
   
-board = all_builds["builds"][board_name]
-if "models" in board:
-  for device in board["models"].values():
-    if device["pushRecoveries"]:
-      board = device
-      break
+board = all_builds["builds"]["dedede"]["models"]["drawper"]
 
 reco_url = list(board["pushRecoveries"].values())[-1]
 print(reco_url)
